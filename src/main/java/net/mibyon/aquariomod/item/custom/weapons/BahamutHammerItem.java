@@ -1,13 +1,10 @@
 package net.mibyon.aquariomod.item.custom.weapons;
-
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.component.Tool;
 
 public class BahamutHammerItem extends SwordItem {
-
-    public BahamutHammerItem(Tier tier, Properties properties) {
+    public BahamutHammerItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
         super(tier, properties);
     }
-
 }
+

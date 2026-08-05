@@ -22,19 +22,19 @@ public class ModBlocks {
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
     public static final DeferredBlock<Block>ARKANICITA_BLOCK =registerBlock("arkanicita_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
     public static final DeferredBlock<Block>ANTI_ARKANICITA_BLOCK =registerBlock("anti_arkanicita_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
     public static final DeferredBlock<Block>ANTI_ARKANICITA_ORE =registerBlock("anti_arkanicita_ore",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
-    public static final DeferredBlock<Block>HYDRALITE_BLOCK =registerBlock("hydralite_block",
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
+    public static final DeferredBlock<Block>HYDROLITH_BLOCK =registerBlock("hydrolith_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final DeferredBlock<Block>HYDRALITE_ORE =registerBlock("hydralite_ore",
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
+    public static final DeferredBlock<Block>HYDROLITH_ORE =registerBlock("hydrolith_ore",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
 
 
 

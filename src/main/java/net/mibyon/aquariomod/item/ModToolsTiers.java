@@ -10,8 +10,14 @@ public class ModToolsTiers {
             1400,4f,3f,28,() ->Ingredient.of(Moditems.ARKANICITA));
 
 
-    {
-    }
+
+    public static final Tier ANTI_ARKANICITA = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_ANTI_ARKANICITA_TOOL,
+            1400,4f,3f,28,() ->Ingredient.of(Moditems.ANTI_ARKANICITA));
+
+    public static final Tier HYDROLITH = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_HYDROLITH_TOOL,
+            1400,4f,3f,28,() ->Ingredient.of(Moditems.HYDROLITH));
+
+
 
 
 

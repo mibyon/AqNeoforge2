@@ -12,6 +12,11 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_ARKANICITA_TOOL = createTag("needs_arkanicita_tool");
         public static final TagKey<Block> INCORRECT_FOR_ARKANICITA_TOOL = createTag("incorrect_for_arkanicita_tool");
 
+        public static final TagKey<Block> NEEDS_ANTI_ARKANICITA_TOOL = createTag("needs_anti_arkanicita_tool");
+        public static final TagKey<Block> INCORRECT_FOR_ANTI_ARKANICITA_TOOL = createTag("incorrect_for_anti_arkanicita_tool");
+
+        public static final TagKey<Block> NEEDS_HYDROLITH_TOOL = createTag("needs_hydrolith_tool");
+        public static final TagKey<Block> INCORRECT_FOR_HYDROLITH_TOOL = createTag("incorrect_for_hydrolith_tool");
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(AquarioMod.MODID, name));
 

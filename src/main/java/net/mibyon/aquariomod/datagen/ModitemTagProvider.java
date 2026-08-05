@@ -33,7 +33,46 @@ public class ModitemTagProvider extends ItemTagsProvider {
                 .add(Moditems.ARKANICITA_AXE.get());
         tag(ItemTags.HOES)
                 .add(Moditems.ARKANICITA_HOE.get());
+        tag(ItemTags.SWORDS)
+                .add(Moditems.BAHAMUT_HAMMER.get());
+        tag(ItemTags.SWORDS)
+                .add(Moditems.DAEMYSH_SPEAR.get());
 
+
+
+        tag(ModTags.Items.TRANSFORMABLE_ITEMS)
+                .add(Moditems.ANTI_ARKANICITA.get());
+
+        tag(ItemTags.SWORDS)
+                .add(Moditems.ANTI_ARKANICITA_SWORD.get());
+        tag(ItemTags.PICKAXES)
+                .add(Moditems.ANTI_ARKANICITA_PICKAXE.get());
+        tag(ItemTags.SHOVELS)
+                .add(Moditems.ANTI_ARKANICITA_SHOVEL.get());
+        tag(ItemTags.AXES)
+                .add(Moditems.ANTI_ARKANICITA_AXE.get());
+        tag(ItemTags.HOES)
+                .add(Moditems.ANTI_ARKANICITA_HOE.get());
+
+
+
+
+        tag(ModTags.Items.TRANSFORMABLE_ITEMS)
+                .add(Moditems.HYDROLITH.get());
+
+
+        tag(ItemTags.SWORDS)
+                .add(Moditems.HYDROLITH_SWORD.get());
+        tag(ItemTags.PICKAXES)
+                .add(Moditems.HYDROLITH_PICKAXE.get());
+        tag(ItemTags.SHOVELS)
+                .add(Moditems.HYDROLITH_SHOVEL.get());
+        tag(ItemTags.AXES)
+                .add(Moditems.HYDROLITH_AXE.get());
+        tag(ItemTags.HOES)
+                .add(Moditems.HYDROLITH_HOE.get());
+        tag(ItemTags.SWORDS)
+                .add(Moditems.KATANA_TURQUESA.get());
     }
 }
 

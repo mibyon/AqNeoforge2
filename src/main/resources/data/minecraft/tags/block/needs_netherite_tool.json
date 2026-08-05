@@ -1,0 +1,10 @@
+{
+  "replace": false ,
+  "values": [
+    "aquariomod:arkanicita_ore",
+    "aquariomod:anti_arkanicita_ore",
+    "aquariomod:hydrolith_ore"
+
+  ]
+
+}

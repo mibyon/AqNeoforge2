@@ -27,6 +27,26 @@ public class ModItemModelProvider extends ItemModelProvider {
             handheldItem(Moditems.ARKANICITA_SHOVEL);
             handheldItem(Moditems.ARKANICITA_AXE);
             handheldItem(Moditems.ARKANICITA_HOE);;
+            handheldItem(Moditems.DAEMYSH_SPEAR);
+            handheldItem(Moditems.BAHAMUT_HAMMER);
+
+
+            basicItem(Moditems.ANTI_ARKANICITA.get());
+            handheldItem(Moditems.ANTI_ARKANICITA_SWORD);
+            handheldItem(Moditems.ANTI_ARKANICITA_PICKAXE);
+            handheldItem(Moditems.ANTI_ARKANICITA_SHOVEL);
+            handheldItem(Moditems.ANTI_ARKANICITA_AXE);
+            handheldItem(Moditems.ANTI_ARKANICITA_HOE);;
+
+
+            basicItem(Moditems.HYDROLITH.get());
+            handheldItem(Moditems.HYDROLITH_SWORD);
+            handheldItem(Moditems.HYDROLITH_PICKAXE);
+            handheldItem(Moditems.HYDROLITH_SHOVEL);
+            handheldItem(Moditems.HYDROLITH_AXE);
+            handheldItem(Moditems.HYDROLITH_HOE);;
+            handheldItem(Moditems.KATANA_TURQUESA);;
+
         }
 
         public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {

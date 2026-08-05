@@ -98,6 +98,9 @@ public class AquarioMod {
             event.accept(Moditems.PLACA_DORY);
             event.accept(Moditems.PLACA_FOFOQUEIRO);
             event.accept(Moditems.COLAR_CORACAO);
+            event.accept(Moditems.POMPOM);
+            event.accept(Moditems.ANEL_DA_PROTECAO);
+            event.accept(Moditems.COLAR_FLAMEJANTE);
             event.accept(ModBlocks.ARKANICITA_ORE);
             event.accept(Moditems.ARKANICITA);
             event.accept(ModBlocks.ARKANICITA_BLOCK);
@@ -110,6 +113,27 @@ public class AquarioMod {
             event.accept(ModBlocks.ANTI_ARKANICITA_ORE);
             event.accept(Moditems.FABIO_ICON);
             event.accept(Moditems.BAHAMUT_HAMMER);
+            event.accept(Moditems.DAEMYSH_SPEAR);
+            event.accept(ModBlocks.HYDROLITH_ORE);
+            event.accept(ModBlocks.HYDROLITH_BLOCK);
+            event.accept(Moditems.ANTI_ARKANICITA);
+            event.accept(Moditems.HYDROLITH);
+            event.accept(Moditems.HYDROLITH_INGOT);
+
+
+            event.accept(Moditems.ANTI_ARKANICITA_AXE);
+            event.accept(Moditems.ANTI_ARKANICITA_SWORD);
+            event.accept(Moditems.ANTI_ARKANICITA_SHOVEL);
+            event.accept(Moditems.ANTI_ARKANICITA_SWORD);
+            event.accept(Moditems.ANTI_ARKANICITA_HOE);
+
+            event.accept(Moditems.HYDROLITH_AXE);
+            event.accept(Moditems.HYDROLITH_SWORD);
+            event.accept(Moditems.HYDROLITH_SHOVEL);
+            event.accept(Moditems.HYDROLITH_SWORD);
+            event.accept(Moditems.HYDROLITH_HOE);
+            event.accept(Moditems.KATANA_TURQUESA);
+
 
 
 

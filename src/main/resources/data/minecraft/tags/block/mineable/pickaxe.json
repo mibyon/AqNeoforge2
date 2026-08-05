@@ -2,7 +2,11 @@
   "replace": false ,
   "values": [
     "aquariomod:arkanicita_block",
-    "aquariomod:arkanicita_ore"
+    "aquariomod:arkanicita_ore",
+    "aquariomod:anti_arkanicita_ore",
+    "aquariomod:anti_arkanicita_block",
+    "aquariomod:hydrolith_ore",
+    "aquariomod:hydrolith_block"
 
 ]
 

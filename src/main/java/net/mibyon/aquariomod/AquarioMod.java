@@ -22,6 +22,8 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import net.mibyon.aquariomod.block.entity.ModBlockEntities;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(AquarioMod.MODID)
 public class AquarioMod {
@@ -63,6 +65,7 @@ public class AquarioMod {
         ModCreativeModeTabs.register(modEventBus);
         Moditems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

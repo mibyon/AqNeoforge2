@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": { "item": "aquariomod:hydrolith_ingot" },
+    "R": { "item": "minecraft:redstone" },
+    "G": { "item": "minecraft:glass_pane" }
+  },
+  "pattern": [
+    "HGH",
+    "HRH",
+    "HHH"
+  ],
+  "result": {
+    "id": "aquariomod:cell_phone",
+    "count": 1
+  }
+}

@@ -20,7 +20,10 @@ build
 # other
 eclipse
 run
+run2
 runs
 run-data
 
-repo
+repoenv.sh
+.vscode
+

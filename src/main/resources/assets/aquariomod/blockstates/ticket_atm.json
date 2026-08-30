@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=lower": { "model": "aquariomod:block/ticket_atm" },
+    "half=upper": { "model": "aquariomod:block/ticket_atm" }
+  }
+}

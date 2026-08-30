@@ -18,15 +18,14 @@
   "item.aquariomod.colar_flamejante": "Amuleto Flamejante",
   "item.aquariomod.anel_da_protecao": "Anel Da Protecao",
   "item.aquariomod.pompom": "PomPom Da Euforia",
-
-
+  
   "item.aquariomod.arkanicita_axe": "Arkanicita Axe",
   "item.aquariomod.arkanicita_pickaxe": "Arkanicita Pickaxe",
   "item.aquariomod.arkanicita_shovel": "Arkanicita Shovel",
   "item.aquariomod.arkanicita_sword": "Arkanicita Sword",
   "item.aquariomod.arkanicita_hoe": "Arkanicita Hoe",
-
-
+  
+  
   "item.aquariomod.anti_arkanicita_pickaxe": "Anti Arkanicita Pickaxe",
   "item.aquariomod.anti_arkanicita_shovel": "Anti Arkanicita Shovel",
   "item.aquariomod.anti_arkanicita_sword": "Anti Arkanicita Sword",
@@ -34,7 +33,7 @@
   "item.aquariomod.anti_arkanicita_axe": "Anti Arkanicita Axe",
   "block.aquariomod.anti_arkanicita_block": "Anti Arkanicita Block",
   "item.aquariomod.anti_arkanicita": "Anti Arkanicita",
-
+  
   "item.aquariomod.hydrolith_pickaxe": "Hydrolith Pickaxe",
   "item.aquariomod.hydrolith_shovel": "Hydrolith Shovel",
   "item.aquariomod.hydrolith_sword": "Hydrolith Sword",
@@ -44,11 +43,14 @@
   "item.aquariomod.katana_turquesa": "Peacemaker",
   "item.aquariomod.hydrolith": "Raw Hydrolith",
   "item.aquariomod.hydrolith_ingot": "Hydrolith Ingot ",
-
-
+  
+  
   "item.aquariomod.fabio_icon": "fabio icon",
   "item.aquariomod.bahamut_hammer": "Bahamut_Hammer",
   "item.aquariomod.daemysh_spear": "Daemysh_Spear",
   "block.aquariomod.hydrolith_ore": "Hydrolith Ore",
-  "block.aquariomod.anti_arkanicita_ore": "Anti-Arkanicita Ore "
+  "block.aquariomod.anti_arkanicita_ore": "Anti-Arkanicita Ore ",
+
+  "item.aquariomod.cell_phone": "AQPhone",
+  "block.aquariomod.ticket_atm": "Ticket A(Q)TM "
 }

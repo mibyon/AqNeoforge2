@@ -5,14 +5,13 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtUtils;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-public class TicketAtmBlockEntity extends BlockEntity {
+public class TicketAtmBlockEntity extends MultiPartBlockEntity {
 
     private int nextTicketNumber = 1;
     private final Set<UUID> playersWhoClaimed = new HashSet<>();
@@ -25,6 +24,7 @@ public class TicketAtmBlockEntity extends BlockEntity {
         if (playersWhoClaimed.contains(playerId)) {
             return -1;
         }
+
         int number = nextTicketNumber++;
         playersWhoClaimed.add(playerId);
         setChanged();

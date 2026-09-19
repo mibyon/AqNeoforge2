@@ -1,5 +1,6 @@
 package net.mibyon.aquariomod.block;
 
+import net.mibyon.aquariomod.block.entity.MultiPartBlockEntity;
 import net.mibyon.aquariomod.block.entity.TicketAtmBlockEntity;
 import net.mibyon.aquariomod.item.Moditems;
 import net.minecraft.core.BlockPos;
@@ -8,84 +9,51 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
-// Esse script ta uma bagunça porque eu apanhei para entender como
-// fazer uma entity block
+import java.util.List;
 
-// Outro que eu refatoro depois, mas já que esse é so para entrevistas
-// nao precisa ser nada muito sofisticado
-public class TicketAtmBlock extends Block implements EntityBlock {
+public class TicketAtmBlock extends MultiPartBlock {
 
-    public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
+    private static final List<BlockPos> FOOTPRINT = List.of(BlockPos.ZERO, new BlockPos(0, 1, 0));
+    private static final VoxelShape SHAPE = Block.box(2, 0, 2, 14, 16, 14);
 
     public TicketAtmBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(HALF, DoubleBlockHalf.LOWER));
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(HALF);
+    protected List<BlockPos> footprint() {
+        return FOOTPRINT;
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        BlockPos pos = context.getClickedPos();
-        Level level = context.getLevel();
-        if (pos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(pos.above()).canBeReplaced(context)) {
-            return this.defaultBlockState();
-        }
-        return null;
+    protected MultiPartBlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new TicketAtmBlockEntity(pos, state);
     }
 
     @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
-        level.setBlock(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER), 3);
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE;
     }
 
     @Override
-    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (!level.isClientSide) {
-            DoubleBlockHalf half = state.getValue(HALF);
-            BlockPos otherPos = half == DoubleBlockHalf.LOWER ? pos.above() : pos.below();
-            BlockState otherState = level.getBlockState(otherPos);
-            if (otherState.is(this) && otherState.getValue(HALF) != half) {
-                level.setBlock(otherPos, Blocks.AIR.defaultBlockState(), 35);
-            }
-        }
-        return super.playerWillDestroy(level, pos, state, player);
-    }
-
-    @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return state.getValue(HALF) == DoubleBlockHalf.LOWER ? new TicketAtmBlockEntity(pos, state) : null;
-    }
-
-    @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (level.isClientSide()) {
-            return InteractionResult.SUCCESS;
+    protected InteractionResult onEmptyHandInteract(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+        if (!(level.getBlockEntity(pos) instanceof MultiPartBlockEntity partEntity)) {
+            return InteractionResult.FAIL;
         }
 
-        BlockPos lowerPos = state.getValue(HALF) == DoubleBlockHalf.LOWER ? pos : pos.below();
+        BlockPos originPos = partEntity.getOriginPos();
 
-        if (!(level.getBlockEntity(lowerPos) instanceof TicketAtmBlockEntity atm)) {
+        if (!(level.getBlockEntity(originPos) instanceof TicketAtmBlockEntity atm)) {
             return InteractionResult.FAIL;
         }
 
@@ -106,10 +74,5 @@ public class TicketAtmBlock extends Block implements EntityBlock {
         level.playSound(null, pos, SoundEvents.NOTE_BLOCK_CHIME.value(), SoundSource.BLOCKS, 1.0f, 1.0f);
 
         return InteractionResult.CONSUME;
-    }
-
-    @Override
-    protected RenderShape getRenderShape(BlockState state) {
-        return state.getValue(HALF) == DoubleBlockHalf.UPPER ? RenderShape.INVISIBLE : RenderShape.MODEL;
     }
 }

@@ -10,13 +10,23 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModBlockEntities {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-        DeferredRegister.create(net.minecraft.core.registries.Registries.BLOCK_ENTITY_TYPE, AquarioMod.MODID);
+            DeferredRegister.create(net.minecraft.core.registries.Registries.BLOCK_ENTITY_TYPE, AquarioMod.MODID);
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TicketAtmBlockEntity>> TICKET_ATM_BE =
-        BLOCK_ENTITIES.register("ticket_atm_be", () -> BlockEntityType.Builder.of(
-            TicketAtmBlockEntity::new, ModBlocks.TICKET_ATM.get()
-        ).build(null));
+            BLOCK_ENTITIES.register("ticket_atm_be", () -> BlockEntityType.Builder.of(
+                    TicketAtmBlockEntity::new, ModBlocks.TICKET_ATM.get()
+            ).build(null));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TvBlockEntity>> TV_BE =
+            BLOCK_ENTITIES.register("tv_be", () -> BlockEntityType.Builder.of(
+                    TvBlockEntity::new, ModBlocks.TV.get()
+            ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE_BE =
+            BLOCK_ENTITIES.register("vending_machine_be", () -> BlockEntityType.Builder.of(
+                    VendingMachineBlockEntity::new, ModBlocks.VENDING_MACHINE.get()
+            ).build(null));
+            
     public static void register(IEventBus modEventBus) {
         BLOCK_ENTITIES.register(modEventBus);
     }

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "is_origin=true,facing=north": { "model": "aquariomod:block/tv" },
+    "is_origin=true,facing=east": { "model": "aquariomod:block/tv", "y": 90 },
+    "is_origin=true,facing=south": { "model": "aquariomod:block/tv", "y": 180 },
+    "is_origin=true,facing=west": { "model": "aquariomod:block/tv", "y": 270 },
+    "is_origin=false,facing=north": { "model": "aquariomod:block/tv" },
+    "is_origin=false,facing=east": { "model": "aquariomod:block/tv", "y": 90 },
+    "is_origin=false,facing=south": { "model": "aquariomod:block/tv", "y": 180 },
+    "is_origin=false,facing=west": { "model": "aquariomod:block/tv", "y": 270 }
+  }
+}

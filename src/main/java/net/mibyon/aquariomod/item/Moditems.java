@@ -3,10 +3,14 @@ package net.mibyon.aquariomod.item;
 import net.mibyon.aquariomod.AquarioMod;
 import net.mibyon.aquariomod.block.ModBlocks;
 import net.mibyon.aquariomod.item.custom.util.CellPhoneItem;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.world.food.FoodProperties;
+import net.mibyon.aquariomod.item.custom.WorkCardItem;
+import net.neoforged.neoforge.common.Tags;
 
 public class Moditems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AquarioMod.MODID);
@@ -31,6 +35,28 @@ public class Moditems {
     public static final DeferredItem<SwordItem> KATANA_TURQUESA = ITEMS.register("katana_turquesa",
         () -> new SwordItem(ModToolsTiers.HYDROLITH, new Item.Properties()
             .attributes(SwordItem.createAttributes(ModToolsTiers.HYDROLITH, 3, 3f))));
+
+    // foods
+    private static final FoodProperties GENERIC_SNACK_FOOD = new FoodProperties.Builder()
+        .nutrition(4)
+        .saturationModifier(0.3f)
+        .build();
+
+    public static final DeferredItem<Item> PIPOCA = ITEMS.register("pipoca",
+        () -> new Item(new Item.Properties().food(GENERIC_SNACK_FOOD)));
+    public static final DeferredItem<Item> MILKSHAKE = ITEMS.register("milkshake",
+        () -> new Item(new Item.Properties().food(GENERIC_SNACK_FOOD)));
+    public static final DeferredItem<Item> ALGODAO_DOCE = ITEMS.register("algodao_doce",
+        () -> new Item(new Item.Properties().food(GENERIC_SNACK_FOOD)));
+    public static final DeferredItem<Item> LATINHA1 = ITEMS.register("latinha1",
+        () -> new Item(new Item.Properties().food(GENERIC_SNACK_FOOD)));
+    public static final DeferredItem<Item> LATINHA2 = ITEMS.register("latinha2",
+        () -> new Item(new Item.Properties().food(GENERIC_SNACK_FOOD)));
+    public static final DeferredItem<Item> LATINHA3 = ITEMS.register("latinha3",
+        () -> new Item(new Item.Properties().food(GENERIC_SNACK_FOOD)));
+    public static final DeferredItem<WorkCardItem> CARTEIRA_TRABALHO = ITEMS.register("carteira_trabalho",
+        () -> new WorkCardItem(new Item.Properties().stacksTo(16)));
+
 
     // artifacts
     public static final DeferredItem<Item> COLAR_CORACAO = ITEMS.register("colar_coracao",
@@ -118,7 +144,8 @@ public class Moditems {
     public static final DeferredItem<SwordItem> DAEMYSH_SPEAR = ITEMS.register("daemysh_spear",
         () -> new SwordItem(ModToolsTiers.ARKANICITA, new Item.Properties()
             .attributes(SwordItem.createAttributes(ModToolsTiers.ARKANICITA, 5, 3f))));
-
+    public static final DeferredItem<Item> NEPTOOL = ITEMS.register("neptool",
+        () -> new Item(new Item.Properties().stacksTo(1).durability(500)));
     // util
 
     public static final DeferredItem<Item> CELL_PHONE = ITEMS.register("cell_phone",

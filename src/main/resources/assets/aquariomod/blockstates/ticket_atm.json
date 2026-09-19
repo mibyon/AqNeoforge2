@@ -1,6 +1,12 @@
 {
   "variants": {
-    "half=lower": { "model": "aquariomod:block/ticket_atm" },
-    "half=upper": { "model": "aquariomod:block/ticket_atm" }
+    "is_origin=true,facing=north": { "model": "aquariomod:block/ticket_atm" },
+    "is_origin=true,facing=east": { "model": "aquariomod:block/ticket_atm", "y": 90 },
+    "is_origin=true,facing=south": { "model": "aquariomod:block/ticket_atm", "y": 180 },
+    "is_origin=true,facing=west": { "model": "aquariomod:block/ticket_atm", "y": 270 },
+    "is_origin=false,facing=north": { "model": "aquariomod:block/ticket_atm" },
+    "is_origin=false,facing=east": { "model": "aquariomod:block/ticket_atm", "y": 90 },
+    "is_origin=false,facing=south": { "model": "aquariomod:block/ticket_atm", "y": 180 },
+    "is_origin=false,facing=west": { "model": "aquariomod:block/ticket_atm", "y": 270 }
   }
 }
